@@ -1,0 +1,33 @@
+{
+  "name": "vuebx",
+  "version": "1.0.0",
+  "description": "a lightweight state management solution for vuejs\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[r",
+  "main": "./dist/vuebx.umd.js",
+  "module": "./dist/vuebx.es.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:es": "rollup -c ./build/es.config.js",
+    "build:umd": "rollup -c ./build/umd.config.js",
+    "build": "npm run build:es && npm run build:umd"
+  },
+  "author": "naecoo",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest-worker": "^24.6.0",
+    "rollup": "^1.11.2",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-terser": "^4.0.4",
+    "terser": "^3.17.0"
+  }
+}
