@@ -8,6 +8,18 @@
     "example": "example",
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naecoo/vuebx.git"
+  },
+  "keywords": [
+    "vue",
+    "vuex"
+  ],
+  "bugs": {
+    "url": "https://github.com/naecoo/vuebx/issues"
+  },
+  "homepage": "https://github.com/naecoo/vuebx#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:es": "rollup -c ./build/es.config.js",
