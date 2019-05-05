@@ -57,7 +57,57 @@ npm install vuebx --save
 ```
 
 ## Usage 
-Vuebx is a simple library
+vuebx receive default state and return two functions
+```javascript
+const defaultState = {
+  count1: 1,
+  count2: 2
+}
+const [getter, setter] = vuebx(defaultState)
+```
+- getter 
 
+Getter is the same as [mapGetters](https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper) that provided by [vuex](https://vuex.vuejs.org), it can simply maps store getters to local computed properties.
+```javascript
+export default {
+  // ...
+  computed: {
+    ...getter(['count1', 'count2'])
+  }
+}
+```
+if you want to map a getter to a different name:
+```javascript
+export default {
+  // ...
+  computed: {
+    ...getter({
+      count_1: 'count1',
+      count_2: 'count2'
+    })
+  }
+}
+```
+- setter
+
+If you've used React before, You will be familiar with the function because of it very similar to [setState](https://reactjs.org/docs/react-component.html#setstate) api.
+```javascript
+// setter receive a new state object
+setter(newState)
+
+// or a function that will return a state object
+setter((state) => {
+  return {
+    ...state,
+    count: state.count + 1
+  }
+})
+
+// setter will return a promise
+setter(newState).then(() => {
+  // as same as Vue.nextTick(() => {})
+  // keep your state up to date
+}) 
+```
 ## License
 [MIT](https://github.com/naecoo/vuebx/blob/master/LICENSE)
