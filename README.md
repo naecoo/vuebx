@@ -90,7 +90,7 @@ export default {
 ```
 - setter
 
-If you've used React before, You will be familiar with the function because of it very similar to [setState](https://reactjs.org/docs/react-component.html#setstate) api.
+If you've used React before, You will be familiar with the function because it very similar to [setState](https://reactjs.org/docs/react-component.html#setstate) api.
 ```javascript
 // setter receive a new state object
 setter(newState)
