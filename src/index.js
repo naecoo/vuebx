@@ -1,15 +1,6 @@
 import Vue from 'vue'
 import { cloneDeep } from 'lodash'
 
-function VueSte (defaultValue = {}) {
-  const state = Vue.observable(defaultValue)
-
-  const getState = _mapGetters(state)
-  const setState = _updateCreator(state)
-
-  return [getState, setState]
-}
-
 function _updateCreator(state) {
   return (newState) => {
     if (typeof newState === 'function') {
@@ -24,7 +15,7 @@ function _updateCreator(state) {
     })
     return new Promise(resolve => {
       Vue.nextTick(() => {
-        resolve()
+        resolve(cloneDeep(state))
       })
     })
   }
@@ -57,4 +48,13 @@ function normalize(map) {
     }))
 }
 
-export default VueSte
+function Vuebx (defaultValue = {}) {
+  const state = Vue.observable(defaultValue)
+
+  const getState = _mapGetters(state)
+  const setState = _updateCreator(state)
+
+  return [getState, setState]
+}
+
+export default Vuebx
