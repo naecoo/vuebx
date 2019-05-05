@@ -1,7 +1,7 @@
 {
   "name": "vuebx",
   "version": "1.0.0",
-  "description": "a lightweight state management solution for vuejs",
+  "description": "a lightweight state management library for vuejs",
   "main": "./dist/vuebx.umd.js",
   "module": "./dist/vuebx.es.js",
   "directories": {
