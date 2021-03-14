@@ -1,6 +1,6 @@
 const test = require('tape')
 const Vue = require('vue')
-const Vuebx = require('../dist/vuebx.umd.js')
+const Vuebx = require('..')
 
 test('running in vue instance', (t) => {
   const [getter, updater] = Vuebx({

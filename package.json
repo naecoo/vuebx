@@ -2,8 +2,9 @@
   "name": "vuebx",
   "version": "1.0.0",
   "description": "a lightweight state management library for vuejs",
-  "main": "./dist/vuebx.umd.js",
-  "module": "./dist/vuebx.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./index.d.ts",
   "directories": {
     "example": "example",
     "test": "test"
@@ -21,15 +22,15 @@
   },
   "homepage": "https://github.com/naecoo/vuebx#readme",
   "scripts": {
-    "test": "npx tape ./test/*",
-    "build:es": "rollup -c ./build/es.config.js",
-    "build:umd": "rollup -c ./build/umd.config.js",
-    "build": "npm run build:es && npm run build:umd"
+    "test": "tape ./test/*",
+    "dev": "cross-env NODE_ENV=development rollup -wc rollup.config.js",
+    "build": "cross-env NODE_ENV=production rollup -c rollup.config.js",
+    "prepublish": "npm run build && npm run test"
   },
   "author": "naecoo",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -37,6 +38,7 @@
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-latest": "^6.24.1",
+    "cross-env": "^7.0.3",
     "jest-worker": "^24.6.0",
     "rollup": "^1.11.2",
     "rollup-plugin-babel": "^3.0.7",

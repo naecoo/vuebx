@@ -1,5 +1,5 @@
 const test = require('tape')
-const Vuebx = require('../dist/vuebx.umd.js')
+const Vuebx = require('../')
 
 test('basic 1', (t) => {
   t.plan(5)
