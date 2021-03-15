@@ -31,6 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21",
+    "serialize-javascript": "^5.0.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -42,7 +43,7 @@
     "jest-worker": "^24.6.0",
     "rollup": "^1.11.2",
     "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-terser": "^5.3.1",
     "tape": "^4.10.1",
     "terser": "^3.17.0"
   }
